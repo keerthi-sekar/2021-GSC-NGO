@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "118350915310",
+    "project_id": "ngodonation-38064",
+    "storage_bucket": "ngodonation-38064.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:118350915310:android:0bfb1381647389913335ff",
+        "android_client_info": {
+          "package_name": "com.gsoc2021.ngodonate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "118350915310-orm9ubtb2dhj69csv58nlakv2oqolh54.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAd6PGj0W1VmbOh9Pxt-0XHoHnciSxW2Bo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "118350915310-orm9ubtb2dhj69csv58nlakv2oqolh54.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
