@@ -1,6 +1,70 @@
+
+/* Your web app's Firebase configuration
+var firebaseConfig = {
+    apiKey: "AIzaSyDtaXNVwWCDxp5mnqvLDFhOw_ngWnubSMU",
+    authDomain: "fir-authproject-2c928.firebaseapp.com",
+    databaseURL: "https://fir-authproject-2c928.firebaseio.com",
+    projectId: "fir-authproject-2c928",
+    storageBucket: "fir-authproject-2c928.appspot.com",
+    messagingSenderId: "807340522328",
+    appId: "1:807340522328:web:63e986c146d09fb117832d",
+    measurementId: "G-740FSXFRBQ"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+*/
+var provider = new firebase.auth.GoogleAuthProvider();
+
+firebase.auth()
+  .signInWithPopup(provider)
+  .then((result) => {
+    /** @type {firebase.auth.OAuthCredential} */
+    var credential = result.credential;
+
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    var token = credential.accessToken;
+    // The signed-in user info.
+    var user = result.user;
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
+});
+
+firebase.auth()
+    .getRedirectResult()
+    .then((result) => {
+    if (result.credential) {
+        /** @type {firebase.auth.OAuthCredential} */
+        var credential = result.credential;
+
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        var token = credential.accessToken;
+        // ...
+    }
+    // The signed-in user info.
+    var user = result.user;
+    }).catch((error) => {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
+});
 // xxxxxxxxxx Working For Sign Up Form xxxxxxxxxx
 // xxxxxxxxxx Full Name Validation xxxxxxxxxx
-function checkUserFullName(){
+/*function checkUserFullName(){
     var userSurname = document.getElementById("userFullName").value;
     var flag = false;
     if(userSurname === ""){
@@ -306,4 +370,4 @@ function signOut(){
             text: "Error",
         })
     });
-}
+}*/
