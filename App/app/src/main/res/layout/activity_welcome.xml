@@ -18,7 +18,8 @@
         app:layout_constraintBottom_toTopOf="@+id/signUpbtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.059" />
 
     <Button
         android:id="@+id/logInBtn"
@@ -37,9 +38,20 @@
         android:id="@+id/signUpbtn"
         android:layout_width="239dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="312dp"
-        android:text="Sign Up"
+        android:layout_marginBottom="4dp"
         android:onClick="signupScreen"
+        android:text="Sign Up"
+        app:layout_constraintBottom_toTopOf="@+id/SigninGoogle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/SigninGoogle"
+        android:layout_width="239dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="312dp"
+        android:text="Log In with Google"
+        android:onClick="googleLogin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

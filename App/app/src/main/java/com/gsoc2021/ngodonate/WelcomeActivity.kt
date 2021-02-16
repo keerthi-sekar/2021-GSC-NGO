@@ -34,4 +34,9 @@ class WelcomeActivity : AppCompatActivity() {
         val intent = Intent(this, SignUpActivity::class.java)
         startActivity(intent)
     }
+
+    fun googleLogin(view: View){
+        val intent = Intent(this, GoogleLoginActivity::class.java)
+        startActivity(intent)
+    }
 }
