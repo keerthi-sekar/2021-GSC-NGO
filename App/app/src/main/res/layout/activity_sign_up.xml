@@ -78,7 +78,6 @@
         android:text="Sign Up"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.191"
         app:layout_constraintStart_toStartOf="parent" />
     <TextView
         android:id="@+id/SignupBtnTxt"
@@ -86,28 +85,11 @@
         android:layout_height="29dp"
         android:layout_marginBottom="284dp"
         android:text="Sign Up"
+        android:textColor="@android:color/white"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.191"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/backSignup"
-        android:layout_width="80dp"
-        android:layout_height="21dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="268dp"
-        android:onClick="backToWelcome"
-        android:text="back"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/signup_message"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
 
 
 
