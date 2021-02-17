@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/signup_background"
     tools:context=".WelcomeActivity">
 
 
@@ -15,44 +16,84 @@
         android:text="Welcome to our app. Please login or signup"
         android:textAlignment="center"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/signUpbtn"
+        app:layout_constraintBottom_toTopOf="@+id/logInBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.059" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/logInBtn"
         android:layout_width="239dp"
         android:layout_height="55dp"
-        android:text="Log In"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/get_started"
         android:onClick="loginScreen"
         app:layout_constraintBottom_toTopOf="@+id/signUpbtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome_message"
-        app:layout_constraintVertical_bias="0.826" />
+        app:layout_constraintTop_toBottomOf="@+id/welcome_message" />
 
-    <Button
+    <TextView
+        android:id="@+id/logInText"
+        android:layout_width="239dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center"
+        android:onClick="loginScreen"
+        android:text="Log In"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/signUpbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_message" />
+
+    <ImageButton
         android:id="@+id/signUpbtn"
         android:layout_width="239dp"
         android:layout_height="55dp"
         android:layout_marginBottom="4dp"
         android:onClick="signupScreen"
+        android:background="@drawable/get_started"
+        app:layout_constraintTop_toBottomOf="@id/logInBtn"
+        app:layout_constraintBottom_toTopOf="@+id/SigninGoogle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <TextView
+        android:id="@+id/signUpText"
+        android:layout_width="239dp"
+        android:layout_height="55dp"
+        android:gravity="center"
+        android:layout_marginBottom="4dp"
         android:text="Sign Up"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/logInBtn"
         app:layout_constraintBottom_toTopOf="@+id/SigninGoogle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/SigninGoogle"
         android:layout_width="239dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="312dp"
-        android:text="Log In with Google"
-        android:onClick="googleLogin"
+        android:background="@drawable/get_started"
+        android:layout_marginBottom="325dp"
+        app:layout_constraintTop_toBottomOf="@id/signUpbtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/SignInGoogleText"
+        android:layout_width="239dp"
+        android:layout_height="55dp"
+        android:text="Sign in with Google"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@id/SigninGoogle"
+        app:layout_constraintEnd_toEndOf="@id/SigninGoogle"
+        app:layout_constraintStart_toStartOf="@id/SigninGoogle"
+        app:layout_constraintTop_toTopOf="@id/SigninGoogle" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
