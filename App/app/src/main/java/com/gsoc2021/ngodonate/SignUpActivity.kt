@@ -55,25 +55,19 @@ class SignUpActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     val firebaseUser = auth!!.currentUser!!
                     val userid = firebaseUser.uid
-                    reference =
-                        FirebaseDatabase.getInstance().getReference("Users").child(userid)
-                    val hashMap =
-                        HashMap<String, String>()
+                    reference = FirebaseDatabase.getInstance().getReference("Users").child(userid)
+                    val hashMap = HashMap<String, String>()
                     hashMap["id"] = userid
                     hashMap["username"] = username
                     hashMap["imageURL"] = "default"
                     hashMap["status"] = "offline"
                     hashMap["search"] = username.toLowerCase(Locale.ROOT)
                     reference!!.setValue(hashMap)
-                        .addOnCompleteListener { task ->
-                            if (task.isSuccessful) {
-                                val intent =
-                                    Intent(this@SignUpActivity, MainActivity::class.java)
-                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
-                                startActivity(intent)
-                                finish()
-                            }
-                        }
+
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+
                 } else {
                     Toast.makeText(
                         this@SignUpActivity,
