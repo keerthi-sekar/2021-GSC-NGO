@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.gsoc2021.ngodonate.R
+import kotlinx.android.synthetic.main.fragment_browse.*
 
 class BrowseFragment : Fragment() {
 
@@ -26,6 +27,8 @@ class BrowseFragment : Fragment() {
         browseViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
+
+
         return root
     }
 }
