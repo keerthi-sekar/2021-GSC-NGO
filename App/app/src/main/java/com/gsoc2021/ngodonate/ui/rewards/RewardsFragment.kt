@@ -1,4 +1,4 @@
-package com.gsoc2021.ngodonate.ui.monetary
+package com.gsoc2021.ngodonate.ui.rewards
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.gsoc2021.ngodonate.R
 
-class MonetaryFragment : Fragment() {
+class RewardsFragment : Fragment() {
 
-    private lateinit var monetaryViewModel: MonetaryViewModel
+    private lateinit var rewardsViewModel: RewardsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        monetaryViewModel =
-            ViewModelProviders.of(this).get(MonetaryViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_monetary, container, false)
-        val textView: TextView = root.findViewById(R.id.text_monetary)
-        monetaryViewModel.text.observe(viewLifecycleOwner, Observer {
+        rewardsViewModel =
+            ViewModelProviders.of(this).get(RewardsViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_rewards, container, false)
+        val textView: TextView = root.findViewById(R.id.text_rewards)
+        rewardsViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

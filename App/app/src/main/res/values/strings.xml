@@ -17,4 +17,10 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <string name="pref_screen_title_live_preview">Live preview settings</string>
+    <string name="pref_screen_title_still_image">Still image settings</string>
+    <string name="pref_category_face_detection">Face detection</string>
+    <string name="pref_category_object_detection">Object detection</string>
+    <string name="pref_category_automl">AutoML Image Labeling</string>
 </resources>

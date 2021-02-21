@@ -46,8 +46,4 @@ class LoginActivity : AppCompatActivity() {
             }
         })
     }
-    fun backToWelcome(view: View){
-        val intent = Intent(this, WelcomeActivity::class.java)
-        startActivity(intent)
-    }
 }

@@ -18,14 +18,14 @@
         tools:layout="@layout/fragment_donate" />
 
     <fragment
-        android:id="@+id/navigation_monetary"
-        android:name="com.gsoc2021.ngodonate.ui.monetary.MonetaryFragment"
-        android:label="Monetary"
-        tools:layout="@layout/fragment_monetary" />
+        android:id="@+id/navigation_browse"
+        android:name="com.gsoc2021.ngodonate.ui.browse.BrowseFragment"
+        android:label="Browse"
+        tools:layout="@layout/fragment_browse" />
 
     <fragment
-        android:id="@+id/navigation_profile"
-        android:name="com.gsoc2021.ngodonate.ui.profile.ProfileFragment"
-        android:label="Profile"
-        tools:layout="@layout/fragment_profile" />
+        android:id="@+id/navigation_rewards"
+        android:name="com.gsoc2021.ngodonate.ui.rewards.RewardsFragment"
+        android:label="Rewards"
+        tools:layout="@layout/fragment_rewards" />
 </navigation>

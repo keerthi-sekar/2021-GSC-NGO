@@ -3,6 +3,7 @@ package com.gsoc2021.ngodonate
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +15,8 @@ import com.google.android.gms.auth.api.signin.*
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_welcome.*
 
@@ -23,6 +26,7 @@ class WelcomeActivity : AppCompatActivity() {
     lateinit var signInClient: GoogleSignInClient
     lateinit var signInOptions: GoogleSignInOptions
     private lateinit var auth: FirebaseAuth
+    private var db = Firebase.firestore
 
     override fun onStart() {
         super.onStart()
@@ -75,7 +79,21 @@ class WelcomeActivity : AppCompatActivity() {
         val credential = GoogleAuthProvider.getCredential(acct.idToken, null)
         auth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful) {
-
+                val firebaseUser = auth.currentUser
+                val name = firebaseUser?.displayName
+                val email = firebaseUser?.email
+                val userid = firebaseUser?.uid
+                val user = hashMapOf(
+                    "id" to userid,
+                    "email" to email,
+                    "name" to name
+                )
+                if (userid != null) {
+                    db.collection("users").document(userid)
+                        .set(user)
+                        .addOnSuccessListener { Log.d("TAG", "DocumentSnapshot successfully written!") }
+                        .addOnFailureListener { e -> Log.w("TAG", "Error writing document", e) }
+                }
                 startActivity(MainActivity.getLaunchIntent(this))
             } else {
                 Toast.makeText(this, "Google sign in failed:(", Toast.LENGTH_LONG).show()
