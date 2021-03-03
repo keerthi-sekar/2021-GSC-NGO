@@ -21,14 +21,14 @@ class BrowseFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        super.onCreate(savedInstanceState)
+
         val viewOfLayout = inflater.inflate(R.layout.fragment_browse, container, false)
 
         listView = viewOfLayout.findViewById(R.id.ngo_list_view)
 
-        val ngoList = NGO.getNGOsFromFile("ngo.json", this)
+        val ngoList = NGO.getNGOsFromFile("ngo.json", this.requireContext())
 
-        val adapter = NGOAdapter(this, ngoList)
+        val adapter = NGOAdapter(this.requireContext(), ngoList)
         listView.adapter = adapter
 
         return viewOfLayout

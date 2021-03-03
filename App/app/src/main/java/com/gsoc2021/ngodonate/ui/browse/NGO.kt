@@ -14,7 +14,7 @@ data class NGO(
     companion object {
 
         fun getNGOsFromFile(filename: String, context: Context): ArrayList<NGO> {
-            val recipeList = ArrayList<NGO>()
+            val ngoList = ArrayList<NGO>()
 
             try {
                 // Load data
@@ -22,18 +22,18 @@ data class NGO(
                 val json = JSONObject(jsonString)
                 val ngos = json.getJSONArray("ngos")
 
-                (0 until ngos.length()).mapTo(recipeList) {
-                    NGO(ngos.getJSONObject(it).getString("title"),
-                        ngos.getJSONObject(it).getString("description"),
-                        ngos.getJSONObject(it).getString("image"),
-                        ngos.getJSONObject(it).getString("url"),
-                        ngos.getJSONObject(it).getString("dietLabel"))
+                (0 until ngos.length()).mapTo(ngoList) {
+                    NGO(ngos.getJSONObject(it).getString("name"),
+                        ngos.getJSONObject(it).getString("email"),
+                        ngos.getJSONObject(it).getString("phoneNumber"),
+                        ngos.getJSONObject(it).getString("location"),
+                        ngos.getJSONObject(it).getString("volunteer"))
                 }
             } catch (e: JSONException) {
                 e.printStackTrace()
             }
 
-            return recipeList
+            return ngoList
         }
 
         private fun loadJsonFromAsset(filename: String, context: Context): String? {

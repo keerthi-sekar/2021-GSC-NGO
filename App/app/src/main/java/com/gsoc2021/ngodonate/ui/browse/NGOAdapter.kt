@@ -50,6 +50,9 @@ class NGOAdapter(private val context: Context,
             holder = ViewHolder()
             holder.titleTextView = rowView.findViewById(R.id.ngo_title) as TextView
             holder.emailTextView = rowView.findViewById(R.id.ngo_email) as TextView
+            holder.numberTextView = rowView.findViewById(R.id.ngo_number) as TextView
+            holder.locationTextView = rowView.findViewById(R.id.ngo_location) as TextView
+            holder.volunteerTextView = rowView.findViewById(R.id.ngo_volunteer) as TextView
             // 4
             rowView.tag = holder
         } else {
@@ -60,11 +63,17 @@ class NGOAdapter(private val context: Context,
 
         val titleTextView = holder.titleTextView
         val emailTextView = holder.emailTextView
+        val numberTextView = holder.numberTextView
+        val locationTextView = holder.locationTextView
+        val volunteerTextView = holder.volunteerTextView
 
         val ngo = getItem(position) as NGO
 
         titleTextView.text = ngo.name
         emailTextView.text = ngo.email
+        numberTextView.text = ngo.phoneNumber
+        locationTextView.text = ngo.location
+        volunteerTextView.text = ngo.volunteer
 
         return rowView
     }
@@ -72,6 +81,9 @@ class NGOAdapter(private val context: Context,
     private class ViewHolder {
         lateinit var titleTextView: TextView
         lateinit var emailTextView: TextView
+        lateinit var numberTextView: TextView
+        lateinit var locationTextView: TextView
+        lateinit var  volunteerTextView: TextView
     }
 
 }
