@@ -1,0 +1,35 @@
+{
+    "ngos": [
+      {
+        "Name": "Hands Against Hunger",
+        "Email" : "handsagainsthunger@gmail.com",
+        "Number": "5131234567",
+        "location": "Cincy, Ohio",
+        "volunteer": "Yes"
+      },
+  
+      {
+        "Name": "Matthew 25 Ministries",
+        "Email" : "matthew25ministries@gmail.com",
+        "Number": "5131234567",
+        "location": "Dayton, Ohio",
+        "volunteer": "Yes"
+      },
+  
+      {
+        "Name": "NGO TEST",
+        "Email" : "NGOTEST@gmail.com",
+        "Number": "5131234567",
+        "location": "Cleveland, Ohio",
+        "volunteer": "No"  
+      },
+
+      {
+        "Name": "NGO TEST 2",
+        "Email" : "NGOTEST2@gmail.com",
+        "Number": "5131234567",
+        "location": "Lebanon, Ohio",
+        "volunteer": "No"  
+      }
+    ]
+  }
