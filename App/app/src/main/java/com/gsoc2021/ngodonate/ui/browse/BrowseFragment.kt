@@ -4,32 +4,46 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
 import android.widget.ListView
+import android.widget.ArrayAdapter
+import android.widget.EditText
+import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.gsoc2021.ngodonate.R
 
 class BrowseFragment : Fragment() {
-    
+
     private lateinit var listView: ListView
     /*var firebasedatabase: FirebaseDatabase? = null
     var NGOList: ArrayList<NGO>?  = null
-    var ref: DatabaseReference? = null*/
+    var ref: DatabaseReference? = null
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    var mRecyclerView: RecycleView? = null*/
+
+    override fun onCreateView(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val viewOfLayout = inflater.inflate(R.layout.fragment_browse, container, false)
+        setContentView(R.layout.fragment_browse)
 
-        listView = viewOfLayout.findViewById(R.id.ngo_list_view)
+        listView = findViewById<ListView>(R.id.ngo_list_view)
 
-        val ngoList = NGO.getNGOsFromFile("ngo.json", this)
-
-        val adapter = NGOAdapter(this, ngoList)
+        val NGOList = //get collection from firebase
+        val adapter = NGOAdapter(this, NGOList)
         listView.adapter = adapter
+
+        val context = this
+        listView.setOnItemClickListener { _, _, position, _ ->
+            val selectedRecipe = ngoList[position]
+
+            // val detailIntent = NGODetailActivity.newIntent(context, selectedRecipe)
+            //startActivity(detailIntent)
+        }
 
         return viewOfLayout
     }
