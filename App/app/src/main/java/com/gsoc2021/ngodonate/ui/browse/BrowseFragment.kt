@@ -10,8 +10,7 @@ import androidx.fragment.app.Fragment
 import com.gsoc2021.ngodonate.R
 
 class BrowseFragment : Fragment() {
-
-    private lateinit var viewOfLayout: View
+    
     private lateinit var listView: ListView
     /*var firebasedatabase: FirebaseDatabase? = null
     var NGOList: ArrayList<NGO>?  = null
@@ -31,14 +30,6 @@ class BrowseFragment : Fragment() {
 
         val adapter = NGOAdapter(this, ngoList)
         listView.adapter = adapter
-
-        val context = this
-        listView.setOnItemClickListener { _, _, position, _ ->
-            val selectedRecipe = ngoList[position]
-
-            // val detailIntent = NGODetailActivity.newIntent(context, selectedRecipe)
-            //startActivity(detailIntent)
-        }
 
         return viewOfLayout
     }
