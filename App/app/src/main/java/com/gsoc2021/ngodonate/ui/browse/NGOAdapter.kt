@@ -1,6 +1,7 @@
 package com.gsoc2021.ngodonate.ui.browse
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,6 +25,7 @@ class NGOAdapter(private val context: Context,
     }
 
     override fun getCount(): Int {
+        Log.d("Size","${dataSource.size}")
         return dataSource.size
     }
 
@@ -67,14 +69,13 @@ class NGOAdapter(private val context: Context,
         val locationTextView = holder.locationTextView
         val volunteerTextView = holder.volunteerTextView
 
-        val ngo = getItem(position) as NGO
-
-        titleTextView.text = ngo.name
-        emailTextView.text = ngo.email
-        numberTextView.text = ngo.phoneNumber
-        locationTextView.text = ngo.location
-        volunteerTextView.text = ngo.volunteer
-
+        titleTextView.text = dataSource[position].name
+        emailTextView.text = dataSource[position].email
+        numberTextView.text = dataSource[position].phoneNumber
+        locationTextView.text = dataSource[position].location
+        volunteerTextView.text = dataSource[position].volunteer
+        Log.d("Random", "Random test")
+        Log.d("PRINTTIME",  "$dataSource[position].name" )
         return rowView
     }
 
