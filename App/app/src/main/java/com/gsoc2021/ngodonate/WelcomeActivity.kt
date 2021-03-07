@@ -83,12 +83,10 @@ class WelcomeActivity : AppCompatActivity() {
                 val name = firebaseUser?.displayName
                 val email = firebaseUser?.email
                 val userid = firebaseUser?.uid
-                val photoUrl = firebaseUser?.photoUrl
                 val user = hashMapOf(
                     "id" to userid,
                     "email" to email,
-                    "name" to name,
-                    "photourl" to photoUrl.toString()
+                    "name" to name
                 )
                 if (userid != null) {
                     db.collection("users").document(userid)
