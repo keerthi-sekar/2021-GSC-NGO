@@ -1,17 +1,15 @@
 package com.gsoc2021.ngodonate.ui.browse
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
+import android.widget.EditText
 import android.widget.ListView
 import androidx.fragment.app.Fragment
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.DocumentSnapshot
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 import com.gsoc2021.ngodonate.R
 import kotlinx.android.synthetic.main.fragment_browse.*
 
@@ -29,13 +27,34 @@ class BrowseFragment : Fragment() {
     ): View? {
 
         val viewOfLayout = inflater.inflate(R.layout.fragment_browse, container, false)
+
         listView = viewOfLayout.findViewById(R.id.ngo_list_view)
+        readNGOs()
+        return viewOfLayout
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        searchBtn?.setOnClickListener {
+            searchNGOs(search_ngos?.text.toString())
+        }
+    }
+
+    fun searchNGOs(s: String){
+        NGO.search = s
         NGO.readData {
-            Log.d("browse","$it")
+            Log.d("browse", "$it")
             val adapter = NGOAdapter(this.requireContext(), it)
             listView.adapter = adapter
         }
-        return viewOfLayout
+    }
+    fun readNGOs(){
+        NGO.search = "default"
+        NGO.readData {
+            Log.d("browse", "$it")
+            val adapter = NGOAdapter(this.requireContext(), it)
+            listView.adapter = adapter
+        }
     }
 
 }
