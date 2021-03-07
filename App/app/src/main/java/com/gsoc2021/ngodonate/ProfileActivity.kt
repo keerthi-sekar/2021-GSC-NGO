@@ -20,4 +20,7 @@ class ProfileActivity : AppCompatActivity() {
             ).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         )
     }
+    fun backBtn(view: View){
+        finish()
+    }
 }

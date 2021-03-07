@@ -87,7 +87,6 @@
                 android:maxLines="3"
                 android:textSize="16sp"
                 tools:text="Volunteer Opportunities: " />
-
         </RelativeLayout>
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

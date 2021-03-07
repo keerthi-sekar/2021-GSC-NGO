@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".FoundNgosActivity"></activity>
         <activity android:name=".MonetaryActivity" />
-        <activity android:name=".DonateActivity" />
+        <activity android:name=".DonateActivity" android:parentActivityName=".MainActivity" />
         <activity android:name=".ProfileActivity" />
         <activity
             android:name=".MainActivity"
