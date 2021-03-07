@@ -2,6 +2,7 @@ package com.gsoc2021.ngodonate
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import com.gsoc2021.ngodonate.ui.browse.NGO
@@ -24,5 +25,8 @@ class FoundNgosActivity : AppCompatActivity() {
             val adapter = NGOAdapter(this, it)
             listView.adapter = adapter
         }
+    }
+    fun backBtn(view: View){
+        finish()
     }
 }

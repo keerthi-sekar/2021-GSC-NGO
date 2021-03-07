@@ -15,7 +15,7 @@ class DonateActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_donate)
-        
+
         val adapter = ArrayAdapter.createFromResource(
             this,
             R.array.objects_list, android.R.layout.simple_spinner_item
