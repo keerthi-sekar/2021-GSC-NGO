@@ -20,8 +20,9 @@ data class NGO(
         private var db = Firebase.firestore
         private lateinit var auth: FirebaseAuth
         val docRef = db.collection("NGOs")
+        var tag = ""
 
-        val documents: MutableList<DocumentSnapshot>? = null
+
 
         fun readData(myCallback: (ArrayList<NGO>) -> Unit) {
             docRef.get().addOnCompleteListener { task ->
@@ -40,6 +41,30 @@ data class NGO(
                         Log.d("EMAIL", email)
                         ngoList.add(currentNgo)
                     }
+                    myCallback(ngoList)
+                }
+            }
+        }
+
+        fun findNGOs(myCallback: (ArrayList<NGO>) -> Unit) {
+            db.collection("NGOs").whereArrayContains("items", tag)
+                .get()
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        val ngoList = ArrayList<NGO>()
+                        for (document in task.result) {
+                            val email = document.get("email") as String
+                            val currentNgo = NGO(
+                                document.get("name") as String,
+                                document.get("email") as String,
+                                document.get("phone_number") as String,
+                                document.get("hq_location") as String,
+                                document.get("volunteer") as String,
+                                document.get("website") as String
+                            )
+                            Log.d("EMAIL", email)
+                            ngoList.add(currentNgo)
+                        }
                     myCallback(ngoList)
                 }
             }
