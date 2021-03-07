@@ -13,6 +13,7 @@ import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.gsoc2021.ngodonate.R
+import kotlinx.android.synthetic.main.fragment_browse.*
 
 class BrowseFragment : Fragment() {
     
