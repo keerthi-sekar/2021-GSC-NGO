@@ -63,7 +63,14 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
+    fun openObjects(view: View){
+        startActivity(
+            Intent(
+                this,
+                DonateActivity::class.java
+            ).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        )
+    }
     companion object {
         fun getLaunchIntent(from: Context) = Intent(from, MainActivity::class.java).apply {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)

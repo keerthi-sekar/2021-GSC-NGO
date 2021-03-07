@@ -7,17 +7,14 @@
     android:paddingTop="?attr/actionBarSize"
     tools:context=".ui.browse.BrowseFragment">
 
-    <TextView
+    <ImageView
         android:id="@+id/text_message"
-        android:layout_width="280dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="172dp"
         android:layout_marginEnd="8dp"
-        android:text="What kind of donation do you want to make?"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="30sp"
+        android:src="@drawable/donate_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,6 +27,7 @@
         android:layout_marginTop="44dp"
         android:background="@drawable/objectsbtn"
         android:text="Sign Up"
+        android:onClick="openObjects"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_message"/>

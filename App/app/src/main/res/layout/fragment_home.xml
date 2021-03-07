@@ -22,7 +22,9 @@
         app:pcv_mode="ring"
         app:pcv_orientation="clockwise"
         app:pcv_progress="75"
-        app:pcv_progressColor="@color/colorAccent"
+        app:pcv_backgroundColor="@color/colorBackground"
+        app:pcv_drawBackground="true"
+        app:pcv_progressColor="@color/colorPrimary"
         app:pcv_startAngle="270"
         app:pcv_textColor="@android:color/black"
         app:pcv_progressBarThickness="20dp"
@@ -48,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="Progress"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -62,46 +64,59 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="60dp"
         app:cardCornerRadius="12dp"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view_id">
+
         <LinearLayout
             android:id="@+id/donations_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
             android:padding="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:orientation="vertical">
+            app:layout_constraintTop_toTopOf="parent">
+
             <TextView
                 android:id="@+id/Title1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Top Donations"
-                android:textSize="16sp"
                 android:textAlignment="center"
-                android:textColor="@color/colorAccent"/>
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hi"/>
+                android:text="Hi"
+                android:textColor="@android:color/white" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hi"/>
+                android:text="Hi"
+                android:textColor="@android:color/white" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hi"/>
+                android:text="Hi"
+                android:textColor="@android:color/white" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hi"/>
+                android:text="Hi"
+                android:textColor="@android:color/white" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hi"/>
+                android:text="Hi"
+                android:textColor="@android:color/white" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -112,13 +127,14 @@
         android:layout_marginTop="60dp"
         app:cardCornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
+
         app:layout_constraintHorizontal_bias="0.216"
         app:layout_constraintStart_toEndOf="@+id/Card1"
         app:layout_constraintTop_toBottomOf="@+id/view_id">
         <LinearLayout
             android:id="@+id/Rankings_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:padding="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -132,27 +148,32 @@
                 android:text="Local Rankings"
                 android:textSize="16sp"
                 android:textAlignment="center"
-                android:textColor="@color/colorAccent"/>
+                android:textColor="@color/colorPrimary"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hi"/>
+                android:text="Hi"
+                android:textColor="@android:color/white"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hi"/>
+                android:text="Hi"
+                android:textColor="@android:color/white"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hi"/>
+                android:text="Hi"
+                android:textColor="@android:color/white"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hi"/>
+                android:text="Hi"
+                android:textColor="@android:color/white"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hi"/>
+                android:text="Hi"
+                android:textColor="@android:color/white"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -163,6 +184,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         app:cardCornerRadius="12dp"
+
         app:layout_constraintEnd_toEndOf="@+id/Card1"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/Card1"
@@ -170,7 +192,7 @@
         <LinearLayout
             android:id="@+id/Points_redeemed"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:padding="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -184,27 +206,32 @@
                 android:text="Points Redeemed"
                 android:textSize="16sp"
                 android:textAlignment="center"
-                android:textColor="@color/colorAccent"/>
+                android:textColor="@color/colorPrimary"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hi"/>
+                android:text="Hi"
+                android:textColor="@android:color/white"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hi"/>
+                android:text="Hi"
+                android:textColor="@android:color/white"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hi"/>
+                android:text="Hi"
+                android:textColor="@android:color/white"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hi"/>
+                android:text="Hi"
+                android:textColor="@android:color/white"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hi"/>
+                android:text="Hi"
+                android:textColor="@android:color/white"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -213,6 +240,7 @@
         android:layout_width="167dp"
         android:layout_height="150dp"
         android:layout_marginTop="16dp"
+
         app:cardCornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="@+id/Card2"
         app:layout_constraintStart_toStartOf="@+id/Card2"
@@ -220,7 +248,7 @@
         <LinearLayout
             android:id="@+id/hot_ngos"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:padding="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -234,27 +262,32 @@
                 android:text="Popular NGOs"
                 android:textSize="16sp"
                 android:textAlignment="center"
-                android:textColor="@color/colorAccent"/>
+                android:textColor="@color/colorPrimary"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hi"/>
+                android:text="Hi"
+                android:textColor="@android:color/white"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hi"/>
+                android:text="Hi"
+                android:textColor="@android:color/white"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hi"/>
+                android:text="Hi"
+                android:textColor="@android:color/white"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hi"/>
+                android:text="Hi"
+                android:textColor="@android:color/white"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hi"/>
+                android:text="Hi"
+                android:textColor="@android:color/white"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

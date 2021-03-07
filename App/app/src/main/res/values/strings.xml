@@ -23,4 +23,11 @@
     <string name="pref_category_face_detection">Face detection</string>
     <string name="pref_category_object_detection">Object detection</string>
     <string name="pref_category_automl">AutoML Image Labeling</string>
+
+    <string-array name="objects_list">
+        <item>Books</item>
+        <item>Clothes</item>
+        <item>Shoes</item>
+        <item>Electronics</item>
+    </string-array>
 </resources>
