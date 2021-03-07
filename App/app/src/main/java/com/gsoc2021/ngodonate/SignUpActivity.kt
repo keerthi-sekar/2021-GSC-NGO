@@ -25,9 +25,9 @@ class SignUpActivity : AppCompatActivity() {
         this.auth = FirebaseAuth.getInstance()
         SignupBtn.setOnClickListener{
             val txtEmail: String = editTextEmail.text.toString()
-            val txtEmail2: String = editTextEmail2.text.toString()
+            val txtName: String = editName.text.toString()
             val txtPassword: String = editTextPassword.text.toString()
-            if (TextUtils.isEmpty(txtEmail) || TextUtils.isEmpty(txtEmail2) || TextUtils.isEmpty(txtPassword)) {
+            if (TextUtils.isEmpty(txtEmail) || TextUtils.isEmpty(txtName) || TextUtils.isEmpty(txtPassword)) {
                 Toast.makeText(
                     this@SignUpActivity,
                     "All fields are required",
@@ -40,12 +40,13 @@ class SignUpActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             } else {
-                register(txtEmail, txtPassword)
+                register(txtName, txtEmail, txtPassword)
             }
         }
     }
 
     private fun register(
+        name: String,
         email: String,
         password: String
     ) {
@@ -56,7 +57,8 @@ class SignUpActivity : AppCompatActivity() {
                     val userid = firebaseUser.uid
                     val user = hashMapOf(
                         "id" to userid,
-                        "email" to email
+                        "email" to email,
+                        "name" to name
                     )
                     db.collection("users").document(userid)
                         .set(user)
