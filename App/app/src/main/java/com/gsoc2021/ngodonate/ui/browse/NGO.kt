@@ -23,8 +23,6 @@ data class NGO(
         var tag = ""
         var search = "default"
 
-
-
         fun readData(myCallback: (ArrayList<NGO>) -> Unit) {
             db.collection("NGOs").whereArrayContains("search", search)
                 .get()
@@ -34,12 +32,12 @@ data class NGO(
                         for (document in task.result) {
                             val email = document.get("email") as String
                             val currentNgo = NGO(
-                                document.get("name") as String,
-                                document.get("email") as String,
-                                document.get("phone_number") as String,
-                                document.get("hq_location") as String,
-                                document.get("volunteer") as String,
-                                document.get("website") as String
+                                if (document.get("name") != null) document.get("name") as String else "",
+                                if (document.get("email") != null) document.get("email") as String else "",
+                                if (document.get("phone_number") != null) document.get("phone_number") as String else "",
+                                if (document.get("hq_location") != null) document.get("hq_location") as String else "",
+                                if (document.get("volunteer") != null) document.get("volunteer") as String else "",
+                                if (document.get("website") != null) document.get("website") as String else ""
                             )
                             Log.d("EMAIL", email)
                             ngoList.add(currentNgo)
@@ -58,12 +56,12 @@ data class NGO(
                         for (document in task.result) {
                             val email = document.get("email") as String
                             val currentNgo = NGO(
-                                document.get("name") as String,
-                                document.get("email") as String,
-                                document.get("phone_number") as String,
-                                document.get("hq_location") as String,
-                                document.get("volunteer") as String,
-                                document.get("website") as String
+                                if (document.get("name") != null) document.get("name") as String else "",
+                                if (document.get("email") != null) document.get("email") as String else "",
+                                if (document.get("phone_number") != null) document.get("phone_number") as String else "",
+                                if (document.get("hq_location") != null) document.get("hq_location") as String else "",
+                                if (document.get("volunteer") != null) document.get("volunteer") as String else "",
+                                if (document.get("website") != null) document.get("website") as String else ""
                             )
                             Log.d("EMAIL", email)
                             ngoList.add(currentNgo)

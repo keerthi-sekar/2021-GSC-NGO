@@ -7,36 +7,48 @@
     android:paddingTop="?attr/actionBarSize"
     tools:context=".ui.browse.BrowseFragment">
 
-    <ImageView
-        android:id="@+id/text_message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="172dp"
-        android:layout_marginEnd="8dp"
-        android:src="@drawable/donate_text"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Card1"
+        android:layout_width="299dp"
+        android:layout_height="96dp"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginVertical="25dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="128dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/ObjectBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.29000002">
+
+        <TextView
+            android:id="@+id/Title1"
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="What kind of\ndonation do you\nwant to make today?"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="26sp" />
+    </androidx.cardview.widget.CardView>
 
     <ImageButton
         android:id="@+id/ObjectBtn"
         android:layout_width="217dp"
         android:layout_height="55dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="64dp"
         android:background="@drawable/objectsbtn"
-        android:text="Sign Up"
         android:onClick="openObjects"
+        android:text="Sign Up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_message"/>
+        app:layout_constraintTop_toBottomOf="@+id/Card1" />
 
     <ImageButton
         android:id="@+id/MonetaryBtn"
         android:layout_width="217dp"
         android:layout_height="55dp"
-        android:layout_marginTop="4dp"
         android:background="@drawable/monetarybtn"
         android:text="Sign Up"
         app:layout_constraintEnd_toEndOf="parent"

@@ -19,6 +19,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_home.*
 import java.sql.Types.NULL
 
 class MainActivity : AppCompatActivity() {
@@ -31,17 +32,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         firebaseUser = FirebaseAuth.getInstance().currentUser
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
-        var name: String
-        var firstName: String
         val profileImage: CircleImageView = findViewById(R.id.toolbar_profile_image)
         db.collection("users").document(firebaseUser!!.uid)
             .get()
             .addOnSuccessListener { document ->
-                name = document.get("name") as String
-                val words = name.split(" ")
-                firstName = words[0]
                 val photourl = document.get("photourl")
-                supportActionBar?.title = "Hi, $firstName"
                 Glide.with(this)
                     .load(photourl)
                     .placeholder(R.drawable.profile_icon)
@@ -54,7 +49,12 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
 
-        //setupActionBarWithNavController(navController, appBarConfiguration)
+        val appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.navigation_home, R.id.navigation_donate, R.id.navigation_browse, R.id.navigation_rewards
+            )
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
 
@@ -70,6 +70,63 @@ class MainActivity : AppCompatActivity() {
                 DonateActivity::class.java
             ).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         )
+    }
+    fun swipeRight(view: View){
+        when(SliderCardTitle.text){
+            "Popular NGOs" ->{
+                SliderCardTitle.text = "Local Rankings"
+                item1.text = "User 1"
+                item2.text = "User 2"
+                item3.text = "User 3"
+                item4.text = "User 4"
+                item5.text = "User 5"
+            }
+            "Local Rankings" -> {
+                SliderCardTitle.text = "Recent Donations"
+                item1.text = "Electronics to CityGospel"
+                item2.text = "Food to Freestore Foodbank"
+                item3.text = "5 Books to Half Price Books"
+                item4.text = "Clothes to Matthew 25"
+                item5.text = "Clothes to St. Vincent de Paul"
+            }
+            "Recent Donations" -> {
+                SliderCardTitle.text = "Popular NGOs"
+                item1.text = "CityGospel"
+                item2.text = "Freestore Foodbank"
+                item3.text = "Half Price Books"
+                item4.text = "Matthew 25"
+                item5.text = "St. Vincent de Paul"
+            }
+        }
+    }
+    fun swipeLeft(view: View){
+        when(SliderCardTitle.text){
+            "Local Rankings" ->{
+                SliderCardTitle.text = "Popular NGOs"
+                item1.text = "CityGospel"
+                item2.text = "Freestore Foodbank"
+                item3.text = "Half Price Books"
+                item4.text = "Matthew 25"
+                item5.text = "St. Vincent de Paul"
+            }
+            "Recent Donations" ->{
+                SliderCardTitle.text = "Local Rankings"
+                item1.text = "User 1"
+                item2.text = "User 2"
+                item3.text = "User 3"
+                item4.text = "User 4"
+                item5.text = "User 5"
+            }
+            "Popular NGOs" ->{
+                SliderCardTitle.text = "Recent Donations"
+                item1.text = "Electronics to CityGospel"
+                item2.text = "Food to Freestore Foodbank"
+                item3.text = "5 Books to Half Price Books"
+                item4.text = "Clothes to Matthew 25"
+                item5.text = "Clothes to St. Vincent de Paul"
+            }
+        }
+
     }
     companion object {
         fun getLaunchIntent(from: Context) = Intent(from, MainActivity::class.java).apply {

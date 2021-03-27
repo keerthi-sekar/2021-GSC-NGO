@@ -8,24 +8,24 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.gsoc2021.ngodonate.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="Your Progress"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_donate"
         android:name="com.gsoc2021.ngodonate.ui.donate.DonateFragment"
-        android:label="Donate"
+        android:label="Make a Donation"
         tools:layout="@layout/fragment_donate" />
 
     <fragment
         android:id="@+id/navigation_browse"
         android:name="com.gsoc2021.ngodonate.ui.browse.BrowseFragment"
-        android:label="Browse"
+        android:label="Find NGOs"
         tools:layout="@layout/fragment_browse" />
 
     <fragment
         android:id="@+id/navigation_rewards"
         android:name="com.gsoc2021.ngodonate.ui.rewards.RewardsFragment"
-        android:label="Rewards"
+        android:label="Redeem Your Points"
         tools:layout="@layout/fragment_rewards" />
 </navigation>
