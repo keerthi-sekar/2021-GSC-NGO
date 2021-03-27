@@ -62,6 +62,7 @@ dependencies {
 
     implementation 'com.ramijemli.percentagechartview:percentagechartview:0.3.0'
     implementation "com.furkanakdemir:surroundcardview:1.0.1"
+    implementation 'com.github.MackHartley:RoundedProgressBar:1.0.1'
 
     // Firebase
     implementation 'com.google.firebase:firebase-core:18.0.2'
