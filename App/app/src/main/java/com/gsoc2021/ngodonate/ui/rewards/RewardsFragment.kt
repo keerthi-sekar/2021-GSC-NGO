@@ -14,7 +14,6 @@ import com.mackhartley.roundedprogressbar.RoundedProgressBar
 class RewardsFragment : Fragment() {
 
     private lateinit var rewardsViewModel: RewardsViewModel
-    private lateinit var roundedProgressBar: RoundedProgressBar
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,14 +28,46 @@ class RewardsFragment : Fragment() {
             textView.text = it
         })*/
 
-        val cPoints = 200
-        val mPoints = 500
-        val dPoints = "500"
-        //monthly_goal.text = dPoints
-        //setProgressBar(cPoints, mPoints)
-
         return root
     }
+    fun swipeRight(view: View){
+        when(SliderCardTitle.text){
+            "NGO1" ->{
+                SliderCardTitle.text = "NGO2"
+                item1.text = "User 1"
 
+            }
+            "NGO2" -> {
+                SliderCardTitle.text = "NGO3"
+                item1.text = "Electronics to CityGospel"
+
+            }
+            "NGO3" -> {
+                SliderCardTitle.text = "NGO1"
+                item1.text = "CityGospel"
+
+            }
+        }
+    }
+    fun swipeLeft(view: View){
+        when(SliderCardTitle.text){
+            "NGO2" ->{
+                SliderCardTitle.text = "NGO1"
+                item1.text = "CityGospel"
+
+            }
+            "NGO3" ->{
+                SliderCardTitle.text = "NGO2"
+                item1.text = "User 1"
+
+            }
+            "NGO1" ->{
+                SliderCardTitle.text = "NGO3"
+                item1.text = "Electronics to CityGospel"
+
+            }
+        }
+
+    }
 
 }
