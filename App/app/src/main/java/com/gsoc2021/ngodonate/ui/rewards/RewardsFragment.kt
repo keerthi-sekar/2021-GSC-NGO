@@ -31,39 +31,39 @@ class RewardsFragment : Fragment() {
         return root
     }
     fun swipeRight(view: View){
-        when(SliderCardTitle.text){
+        when(cSliderCardTitle.text){
             "NGO1" ->{
-                SliderCardTitle.text = "NGO2"
-                item1.text = "User 1"
+                cSliderCardTitle.text = "NGO2"
+                cText.text = "User 1"
 
             }
             "NGO2" -> {
-                SliderCardTitle.text = "NGO3"
-                item1.text = "Electronics to CityGospel"
+                cSliderCardTitle.text = "NGO3"
+                cText.text = "Electronics to CityGospel"
 
             }
             "NGO3" -> {
-                SliderCardTitle.text = "NGO1"
-                item1.text = "CityGospel"
+                cSliderCardTitle.text = "NGO1"
+                cText.text = "CityGospel"
 
             }
         }
     }
     fun swipeLeft(view: View){
-        when(SliderCardTitle.text){
+        when(cSliderCardTitle.text){
             "NGO2" ->{
-                SliderCardTitle.text = "NGO1"
-                item1.text = "CityGospel"
+                cSliderCardTitle.text = "NGO1"
+                cText.text = "CityGospel"
 
             }
             "NGO3" ->{
-                SliderCardTitle.text = "NGO2"
-                item1.text = "User 1"
+                cSliderCardTitle.text = "NGO2"
+                cText.text = "User 1"
 
             }
             "NGO1" ->{
-                SliderCardTitle.text = "NGO3"
-                item1.text = "Electronics to CityGospel"
+                cSliderCardTitle.text = "NGO3"
+                cText.text = "Electronics to CityGospel"
 
             }
         }
