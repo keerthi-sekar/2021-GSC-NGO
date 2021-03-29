@@ -3,11 +3,12 @@
 DonationQuest is an app to provide an easy solution to seamlessly integrate eco-friendly practices in a fast-paced life. We want to show our users that eco-friendly living is affordable and easy by giving them the power to users to choose where to donate, and what to donate. 
 
 ## App Features
-Under Construction
+*Under Construction*
 
 ## To Run Prototype
 The following instructions is how to run the most latest build of the app.
-Under Construction
+
+*Under Construction*
 
 ## Tools Used
 The following was used to either develop the app or integrate functionality:
@@ -20,5 +21,6 @@ The following was used to either develop the app or integrate functionality:
 
 ## Contact Information
 Keerthi Sekar: sekarku@mail.uc.edu
+
 Kartikey Pandey: pandeykh@mail.uc.edu
 
