@@ -61,7 +61,7 @@
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:background="@drawable/back_btn"
-                android:onClick="swipeLeft"
+                android:onClick="clickLeft"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -85,7 +85,7 @@
                 android:layout_width="22dp"
                 android:layout_height="22dp"
                 android:background="@drawable/back_btn"
-                android:onClick="swipeRight"
+                android:onClick="clickRight"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/cSliderCardTitle"
@@ -123,21 +123,11 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.996">
+        app:layout_constraintVertical_bias="0.898">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <ImageButton
-                android:id="@+id/hSwipeLeftBtn"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:background="@drawable/back_btn"
-                android:onClick="swipeLeft"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/hSliderCardTitle"
@@ -153,36 +143,37 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/hSwipeRightBtn"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:background="@drawable/back_btn"
-                android:onClick="swipeRight"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/hSliderCardTitle"
-                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ImageButton
-            android:id="@+id/hourBtn"
-            android:layout_width="381dp"
-            android:layout_height="134dp"
-            android:background="@drawable/rewards_icon"
-            android:onClick="swipeLeft"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/nText"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/hoursInput"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Hands Against Hunger"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="22sp" />
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/hours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="number of hours" />
+
+            <Button
+                android:id="@+id/hoursButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Redeem"
+                android:onClick = "getHours"/>
+
+            <TextView
+                android:id="@+id/hoursConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Hours Recieved!"
+                android:textColor="#009688" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
