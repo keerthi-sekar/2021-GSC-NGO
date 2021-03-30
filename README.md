@@ -3,7 +3,12 @@
 DonationQuest is an app to provide an easy solution to seamlessly integrate eco-friendly practices in a fast-paced life. We want to show our users that eco-friendly living is affordable and easy by giving them the power to users to choose where to donate, and what to donate. 
 
 ## App Features
-*Under Construction*
+* Take a picture of your object or select the item from the drop down menu
+* Select where you want to donate it
+* Use Google Maps to drive to the donation site
+* Get points on your donation to use via coupons from local busiesses in your area or volunteer hours
+* Browse through library of nonprofits available
+* view statistics from your recent donations on the homepage
 
 ## To Run Prototype
 The following instructions is how to run the most latest build of the app.
