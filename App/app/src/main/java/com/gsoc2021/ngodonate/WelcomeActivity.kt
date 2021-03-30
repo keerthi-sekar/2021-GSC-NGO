@@ -88,7 +88,9 @@ class WelcomeActivity : AppCompatActivity() {
                     "id" to userid,
                     "email" to email,
                     "name" to name,
-                    "photourl" to photoUrl.toString()
+                    "photourl" to photoUrl.toString(),
+                    "points" to 0,
+                    "monthlyTarget" to 200
                 )
                 if (userid != null) {
                     db.collection("users").document(userid)

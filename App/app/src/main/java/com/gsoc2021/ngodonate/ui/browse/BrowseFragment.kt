@@ -1,5 +1,6 @@
 package com.gsoc2021.ngodonate.ui.browse
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -7,9 +8,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.EditText
 import android.widget.ListView
 import androidx.fragment.app.Fragment
+import com.gsoc2021.ngodonate.NavigationActivity
 import com.gsoc2021.ngodonate.R
 import kotlinx.android.synthetic.main.fragment_browse.*
 
@@ -46,6 +49,11 @@ class BrowseFragment : Fragment() {
             Log.d("browse", "$it")
             val adapter = NGOAdapter(this.requireContext(), it)
             listView.adapter = adapter
+            listView.onItemClickListener =
+                AdapterView.OnItemClickListener { parent, view, position, id ->
+                    val name: String = it[position].name
+                    navigateNgos(name)
+                }
         }
     }
     fun readNGOs(){
@@ -54,7 +62,18 @@ class BrowseFragment : Fragment() {
             Log.d("browse", "$it")
             val adapter = NGOAdapter(this.requireContext(), it)
             listView.adapter = adapter
+            listView.onItemClickListener =
+                AdapterView.OnItemClickListener { parent, view, position, id ->
+                    val name: String = it[position].name
+                    navigateNgos(name)
+                }
         }
     }
+    fun navigateNgos(name: String){
+        val intent = Intent(activity, NavigationActivity::class.java)
+        intent.putExtra("NGOname", name)
+        startActivity(intent)
+    }
+
 
 }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NGOdonate</string>
+    <string name="app_name">DonationQuest</string>
     <string name="title_activity_logged_in_google">LoggedInGoogle</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -28,6 +28,8 @@
         <item>Books</item>
         <item>Clothes</item>
         <item>Shoes</item>
+        <item>Hygiene Products</item>
         <item>Electronics</item>
     </string-array>
+    <string name="title_activity_maps">Map</string>
 </resources>
