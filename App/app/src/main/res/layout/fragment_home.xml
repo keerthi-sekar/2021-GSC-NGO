@@ -24,7 +24,7 @@
         android:id="@+id/percentage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="75%"
+        android:text=""
         android:textColor="@color/colorPrimary"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="@+id/chart"
@@ -33,9 +33,10 @@
         app:layout_constraintTop_toTopOf="@+id/chart" />
 
     <TextView
+        android:id="@+id/pointsDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="375/500"
+        android:text=""
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,7 +77,7 @@
                 android:id="@+id/monetaryImpact"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="$5000"
+                android:text=""
                 android:textAlignment="textEnd"
                 android:textColor="@android:color/black"
                 android:textSize="22sp" />

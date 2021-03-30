@@ -42,6 +42,8 @@ class HomeFragment : Fragment() {
 
         readData {
             var progressPercentage: Float = it[0].toFloat()/it[1].toFloat()*360
+            percentage.text = (progressPercentage.toInt()*100/360).toString()+"%"
+            pointsDetails.text = it[0].toString()+"/"+it[1].toString()
             val monetaryValue = it[0].toInt()/50*27
             Log.d("debug1", "$progressPercentage")
             val pieChartDSL = buildChart {
