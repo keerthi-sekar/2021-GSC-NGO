@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -19,12 +20,15 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_rewards.*
 import java.sql.Types.NULL
 
 class MainActivity : AppCompatActivity() {
 
     private var firebaseUser: FirebaseUser? = null
     private var db = Firebase.firestore
+    var currentPoints = 20
+    var monthlygoal = 300
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,7 +61,8 @@ class MainActivity : AppCompatActivity() {
         //setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-
+        var progressPercentage: Int = currentPoints/monthlygoal * 1004
+        //Card4!!.layoutParams.width  = progressPercentage * Card3.width
         profileImage.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
@@ -75,5 +80,39 @@ class MainActivity : AppCompatActivity() {
         fun getLaunchIntent(from: Context) = Intent(from, MainActivity::class.java).apply {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         }
+    }
+
+    fun getHours(view: View)
+    {
+        Toast.makeText(applicationContext, "Hours Received!", Toast.LENGTH_SHORT).show()
+    }
+
+    fun clickRight(view: View){
+        when(cText.text){
+            "NGO1" ->{
+                cText.text = "NGO2"
+            }
+            "NGO2" -> {
+                cText.text = "NGO3"
+
+            }
+            "NGO3" -> {
+                cText.text = "NGO1"
+            }
+        }
+    }
+    fun clickLeft(view: View){
+        when(cText.text){
+            "NGO2" ->{
+                cText.text = "NGO1"
+            }
+            "NGO3" ->{
+                cText.text = "NGO2"
+            }
+            "NGO1" ->{
+                cText.text = "NGO3"
+            }
+        }
+
     }
 }

@@ -1,6 +1,7 @@
 package com.gsoc2021.ngodonate.ui.rewards
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,8 +18,8 @@ import kotlinx.android.synthetic.*
 class RewardsFragment : Fragment() {
 
     private lateinit var rewardsViewModel: RewardsViewModel
-    private lateinit var hourConfirmationText: TextView
-
+    var currentPoints = 20
+    var monthlygoal = 300
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -31,54 +32,21 @@ class RewardsFragment : Fragment() {
         rewardsViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })*/
-        hourConfirmationText = root.findViewById(R.id.hoursConfirm)
-        hourConfirmationText.text = " "
+
+        var progressPercentage: Int = currentPoints/monthlygoal * 100
+        //Card4!!.layoutParams.width  = progressPercentage * Card3.width
         return root
     }
 
-    fun getHours(view: View)
-    {
-        hourConfirmationText.text = "Hours Received!"
-    }
-
-    fun clickRight(view: View){
-        when(cSliderCardTitle.text){
-            "NGO1" ->{
-                cSliderCardTitle.text = "NGO2"
-                cText.text = "User 1"
-
-            }
-            "NGO2" -> {
-                cSliderCardTitle.text = "NGO3"
-                cText.text = "Electronics to CityGospel"
-
-            }
-            "NGO3" -> {
-                cSliderCardTitle.text = "NGO1"
-                cText.text = "CityGospel"
-
-            }
-        }
-    }
-    fun clickLeft(view: View){
-        when(cSliderCardTitle.text){
-            "NGO2" ->{
-                cSliderCardTitle.text = "NGO1"
-                cText.text = "CityGospel"
-
-            }
-            "NGO3" ->{
-                cSliderCardTitle.text = "NGO2"
-                cText.text = "User 1"
-
-            }
-            "NGO1" ->{
-                cSliderCardTitle.text = "NGO3"
-                cText.text = "Electronics to CityGospel"
-
-            }
-        }
-
+    private fun setProgressBarAttributesProgrammatically(roundedProgressBar: RoundedProgressBar) {
+        roundedProgressBar.setProgressColor(R.color.colorPrimary)
+        roundedProgressBar.setProgressBgColor(R.color.colorWhite)
+        roundedProgressBar.setTextSize(resources.getDimension(R.dimen.text_size))
+        roundedProgressBar.setTextColor(R.color.colorBlack)
+        roundedProgressBar.setBgTextColor(R.color.colorWhite)
+        roundedProgressBar.showProgressText(true)
+        //addpoints (current/monthly)
+        roundedProgressBar.setAnimationLength(900)
     }
 
 }
