@@ -21,7 +21,6 @@
         app:pcv_backgroundBarColor="@color/colorBackgroundLight"
         app:pcv_mode="ring"
         app:pcv_orientation="clockwise"
-        app:pcv_progress="75"
         app:pcv_backgroundColor="@color/colorBackground"
         app:pcv_drawBackground="true"
         app:pcv_progressColor="@color/colorPrimary"

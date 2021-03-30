@@ -24,7 +24,7 @@ data class NGO(
         var search = "default"
 
         fun readData(myCallback: (ArrayList<NGO>) -> Unit) {
-            db.collection("NGOs").whereArrayContains("search", search)
+            db.collection("NGOs")
                 .get()
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {

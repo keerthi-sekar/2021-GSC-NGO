@@ -58,7 +58,9 @@ class SignUpActivity : AppCompatActivity() {
                     val user = hashMapOf(
                         "id" to userid,
                         "email" to email,
-                        "name" to name
+                        "name" to name,
+                        "points" to 0,
+                        "monthlyTarget" to 200
                     )
                     db.collection("users").document(userid)
                         .set(user)
