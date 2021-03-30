@@ -7,120 +7,70 @@
     android:layout_height="match_parent"
     tools:context=".ui.rewards.RewardsFragment">
 
-    <TextView
-        android:id="@+id/text_rewards"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Monthly Target: "
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Card3"
-        app:layout_constraintVertical_bias="0.057" />
-
-    <TextView
-        android:id="@+id/monthly_goal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="300"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.106" />
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardCoupon"
+        android:id="@+id/maxProgress"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_height="22dp"
         android:layout_marginHorizontal="25dp"
         app:cardCornerRadius="12dp"
-        app:layout_constraintTop_toBottomOf="@id/monthly_goal"
-        app:layout_constraintStart_toStartOf="parent"
-        >
-    <LinearLayout
-        android:id="@+id/coupon_cards"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.328">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:id="@+id/cSwipeLeftBtn"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:background="@drawable/back_btn"
-                android:onClick="clickLeft"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/cSliderCardTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Redeem Point as Coupons"
-                android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
-                android:textSize="22dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageButton
-                android:id="@+id/cSwipeRightBtn"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:background="@drawable/back_btn"
-                android:onClick="clickRight"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/cSliderCardTitle"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <ImageButton
-            android:id="@+id/couponBtn"
-            android:layout_width="381dp"
-            android:layout_height="134dp"
-            android:background="@drawable/rewards_icon"
-            android:onClick="swipeLeft"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/cText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="NGO1"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="22sp" />
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent">
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/progress"
+        android:layout_width="50dp"
+        android:layout_height="22dp"
+        android:layout_marginHorizontal="25dp"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/maxProgress"
+        app:layout_constraintBottom_toBottomOf="@id/maxProgress">
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Card1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="12dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/maxProgress">
+
+        <LinearLayout
+            android:id="@+id/donations_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/Title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monthly Target:"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp" />
+            <TextView
+                android:id="@+id/monetaryImpact"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="300"
+                android:textAlignment="textEnd"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardRedeem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="25dp"
@@ -128,7 +78,7 @@
         app:cardCornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardCoupon">
+        app:layout_constraintTop_toBottomOf="@id/Card1">
 
         <LinearLayout
             android:id="@+id/hour_cards"
@@ -155,11 +105,16 @@
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimary"
                     android:textSize="26sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/hSliderCardTitle"
+                    android:text="You can redeem max 300 points in a month\n50 Points = 0.5 hours"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -172,54 +127,111 @@
                     android:id="@+id/hours"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="number of hours" />
+                    android:hint="number of points" />
 
-                <Button
-                    android:id="@+id/hoursButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="getHours"
-                    android:text="Redeem" />
-
-                <TextView
-                    android:id="@+id/hoursConfirm"
+                <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@android:color/white"
-                    android:text=""
-                    android:textColor="#009688" />
-
+                    app:cardCornerRadius="12dp"
+                    android:layout_gravity="center"
+                    app:cardBackgroundColor="@color/colorPrimary">
+                    <TextView
+                        android:id="@+id/hoursButton"
+                        android:paddingVertical="5dp"
+                        android:paddingHorizontal="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:textColor="@color/colorWhite"
+                        android:onClick="getHours"
+                        android:text="Redeem"
+                        android:textSize="20sp"/>
+                </androidx.cardview.widget.CardView>
             </com.google.android.material.textfield.TextInputLayout>
-
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
     <androidx.cardview.widget.CardView
-        android:id="@+id/Card3"
+        android:id="@+id/cardCoupon"
         android:layout_width="match_parent"
-        android:layout_height="15dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginTop="10dp"
         app:cardCornerRadius="12dp"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardRedeem"
+        app:layout_constraintStart_toStartOf="parent">
+        <LinearLayout
+            android:id="@+id/coupon_cards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.328">
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Card1">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+                <ImageButton
+                    android:id="@+id/cSwipeLeftBtn"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/back_btn"
+                    android:onClick="clickLeft"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/cSliderCardTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Redeem Point as Coupons"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="22dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/cSwipeRightBtn"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/swipe_right"
+                    android:onClick="clickRight"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cSliderCardTitle"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageButton
+                android:id="@+id/couponBtn"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@drawable/black_owned"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/cText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BlaCk OWNed"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="22sp" />
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:id="@+id/Card4"
-        android:layout_width="50dp"
-        android:layout_height="15dp"
-        android:layout_marginTop="16dp"
-        android:padding="10dp"
-        app:cardCornerRadius="12dp"
-        app:cardBackgroundColor="@color/colorPrimary"
-        app:layout_constraintStart_toStartOf="@id/Card3"
-        app:layout_constraintTop_toBottomOf="@+id/Card1">
-
-    </androidx.cardview.widget.CardView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

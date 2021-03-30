@@ -71,10 +71,14 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:19.6.0'
     implementation 'com.google.firebase:firebase-auth:20.0.3'
     implementation 'com.google.firebase:firebase-storage:19.2.1'
+    implementation 'com.github.furkanaskin:ClickablePieChart:1.0.8'
     implementation 'com.google.firebase:firebase-messaging:21.0.1'
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.google.android.gms:play-services-location:18.0.0'
     implementation 'com.google.firebase:firebase-firestore-ktx'
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.2.1"
+
+    implementation 'com.github.blackfizz:eazegraph:1.2.5l@aar'
+    implementation 'com.nineoldandroids:library:2.4.0'
 
 }

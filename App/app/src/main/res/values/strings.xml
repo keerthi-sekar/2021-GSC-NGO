@@ -27,7 +27,7 @@
     <string-array name="objects_list">
         <item>Books</item>
         <item>Clothes</item>
-        <item>Shoes</item>
+        <item>Food</item>
         <item>Hygiene Products</item>
         <item>Electronics</item>
     </string-array>

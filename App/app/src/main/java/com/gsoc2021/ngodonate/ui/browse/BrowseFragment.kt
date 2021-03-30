@@ -72,6 +72,7 @@ class BrowseFragment : Fragment() {
     fun navigateNgos(name: String){
         val intent = Intent(activity, NavigationActivity::class.java)
         intent.putExtra("NGOname", name)
+        intent.putExtra("objectType", "Books")
         startActivity(intent)
     }
 

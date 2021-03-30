@@ -28,8 +28,6 @@ class MainActivity : AppCompatActivity() {
 
     private var firebaseUser: FirebaseUser? = null
     private var db = Firebase.firestore
-    var currentPoints = 20
-    var monthlygoal = 300
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,8 +59,6 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        var progressPercentage: Int = currentPoints/monthlygoal * 1004
-        //Card4!!.layoutParams.width  = progressPercentage * Card3.width
         profileImage.setOnClickListener {
             val intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
@@ -133,6 +129,8 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+
     companion object {
         fun getLaunchIntent(from: Context) = Intent(from, MainActivity::class.java).apply {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
@@ -146,28 +144,35 @@ class MainActivity : AppCompatActivity() {
 
     fun clickRight(view: View){
         when(cText.text){
-            "NGO1" ->{
-                cText.text = "NGO2"
+            "BlaCk OWNed" ->{
+                cText.text = "Smith & Hannon"
+                couponBtn.background = resources.getDrawable(R.drawable.smith_and_hannon)
             }
-            "NGO2" -> {
-                cText.text = "NGO3"
+            "Smith & Hannon" -> {
+                cText.text = "Toko Baru"
+                couponBtn.background = resources.getDrawable(R.drawable.toko_baru)
 
             }
-            "NGO3" -> {
-                cText.text = "NGO1"
+            "Toko Baru" -> {
+                cText.text = "BlaCk OWNed"
+                couponBtn.background = resources.getDrawable(R.drawable.black_owned)
             }
         }
     }
     fun clickLeft(view: View){
         when(cText.text){
-            "NGO2" ->{
-                cText.text = "NGO1"
+            "BlaCk OWNed" ->{
+                cText.text = "Toko Baru"
+                couponBtn.background = resources.getDrawable(R.drawable.toko_baru)
             }
-            "NGO3" ->{
-                cText.text = "NGO2"
+            "Smith & Hannon" -> {
+                cText.text = "BlaCk OWNed"
+                couponBtn.background = resources.getDrawable(R.drawable.black_owned)
+
             }
-            "NGO1" ->{
-                cText.text = "NGO3"
+            "Toko Baru" -> {
+                cText.text = "Smith & Hannon"
+                couponBtn.background = resources.getDrawable(R.drawable.smith_and_hannon)
             }
         }
 

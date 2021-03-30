@@ -22,7 +22,8 @@ class FoundNgosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_found_ngos)
         val intent = intent
-        NGO.tag = intent.getStringExtra("object")
+        val objectType = intent.getStringExtra("object")
+        NGO.tag = objectType
         listView = ngo_list_view
         NGO.findNGOs {
             Log.d("browse", "$it")
@@ -32,16 +33,17 @@ class FoundNgosActivity : AppCompatActivity() {
             listView.onItemClickListener =
                 AdapterView.OnItemClickListener { parent, view, position, id ->
                     val name: String = it[position].name
-                    navigateNgos(name)
+                    navigateNgos(name, objectType)
                 }
         }
     }
     fun backBtn(view: View){
         finish()
     }
-    fun navigateNgos(name: String){
+    fun navigateNgos(name: String, objectType: String){
         val intent = Intent(this, NavigationActivity::class.java)
         intent.putExtra("NGOname", name)
+        intent.putExtra("objectType", objectType)
         startActivity(intent)
     }
 

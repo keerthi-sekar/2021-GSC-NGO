@@ -7,40 +7,51 @@
     android:paddingTop="?attr/actionBarSize"
     tools:context=".ui.home.HomeFragment">
 
-
-    <com.ramijemli.percentagechartview.PercentageChartView
-        android:id="@+id/view_id"
-        android:layout_width="175dp"
-        android:layout_height="175dp"
-        android:layout_marginTop="20dp"
+    <com.faskn.lib.ClickablePieChart
+        android:id="@+id/chart"
+        android:layout_marginTop="10dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:animationDuration="2000"
+        app:centerColor="@color/colorBackgroundLight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:pcv_animDuration="800"
-        app:pcv_animInterpolator="anticipate_overshoot"
-        app:pcv_backgroundBarColor="@color/colorBackgroundLight"
-        app:pcv_mode="ring"
-        app:pcv_orientation="clockwise"
-        app:pcv_backgroundColor="@color/colorBackground"
-        app:pcv_drawBackground="true"
-        app:pcv_progressColor="@color/colorPrimary"
-        app:pcv_startAngle="270"
-        app:pcv_textColor="@android:color/black"
-        app:pcv_progressBarThickness="20dp"
-        app:pcv_textSize="44sp"
-        android:elevation="6dp"/>
+        app:showPercentage="true"
+        app:showPopup="false" />
+
+    <TextView
+        android:id="@+id/percentage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="75%"
+        android:textColor="@color/colorPrimary"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="@+id/chart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/chart" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="375/500"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/percentage" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/Card1"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_marginHorizontal="25dp"
         android:layout_marginTop="16dp"
         app:cardCornerRadius="12dp"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view_id">
+        app:layout_constraintTop_toBottomOf="@+id/chart">
 
         <LinearLayout
             android:id="@+id/donations_list"
@@ -60,7 +71,7 @@
                 android:text="Monetary Impact:"
                 android:textAlignment="textStart"
                 android:textColor="@color/colorPrimary"
-                android:textSize="16sp" />
+                android:textSize="22sp" />
             <TextView
                 android:id="@+id/monetaryImpact"
                 android:layout_width="fill_parent"
@@ -68,7 +79,7 @@
                 android:text="$5000"
                 android:textAlignment="textEnd"
                 android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textSize="22sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -157,7 +168,7 @@
                 android:textAlignment="center"
                 android:layout_height="wrap_content"
                 android:textSize="22sp"
-                android:text="Hi"
+                android:text="Half Price Books"
                 android:textColor="@android:color/black"/>
             <TextView
                 android:id="@+id/item4"
@@ -165,7 +176,7 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:textSize="22sp"
-                android:text="Hi"
+                android:text="Matthew 25"
                 android:textColor="@android:color/black"/>
             <TextView
                 android:id="@+id/item5"
@@ -173,7 +184,7 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:textSize="22sp"
-                android:text="Hi"
+                android:text="St. Vincent de Paul"
                 android:textColor="@android:color/black"/>
 
         </LinearLayout>
@@ -204,7 +215,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Quote of the day"
-                android:textSize="16sp"
+                android:textSize="26sp"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"/>
 
@@ -212,8 +223,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="“Remember that the happiest people are not those getting more, but those giving more.” ―H. Jackson Brown Jr.
+                android:text="“Remember that the happiest people are not those getting more, but those giving more.” \nH. Jackson Brown Jr.
 "
+                android:textAlignment="center"
+                android:textSize="22sp"
                 android:textColor="@android:color/black"
                 android:textStyle="italic" />
         </LinearLayout>
