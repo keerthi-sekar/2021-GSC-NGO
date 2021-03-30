@@ -1,6 +1,6 @@
 # GSC 2021: DonationQuest
 
-DonationQuest is an app to provide an easy solution to seamlessly integrate eco-friendly practices in a fast-paced life. We want to show our users that eco-friendly living is affordable and easy by giving them the power to users to choose where to donate, and what to donate. 
+DonationQuest is an app to provide an easy solution to seamlessly integrate eco-friendly practices in a fast-paced life. We want to show our users that eco-friendly living is affordable and easy by giving them the power to users to choose where to donate, and what to donate. *To run latest version of DonationQuest, refer to the "Run Prototype" section for detailed instructions.*
 
 ### App Features
 * Take a picture of your object or select the item from the drop down menu
