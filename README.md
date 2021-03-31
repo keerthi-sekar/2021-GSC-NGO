@@ -30,7 +30,7 @@ If you are unable to view the apk file through the link follow these steps:
 4. Download apk from here
 
 ## Future
-* Analyze object picture to see quality of donation
+* Integrate object detection to analyze item pictures to see quality of the items donated
 * Integrate ride sharing (Uber or Lyft)
 * Implement monetary donations
 * Smoothen out rewards page with a badge system
