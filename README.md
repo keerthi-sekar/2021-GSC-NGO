@@ -24,7 +24,7 @@ The following instructions is how to run the most latest build of the app.
 Click here: https://github.com/keerthi-sekar/2021-GSC-NGO/releases/download/v1.0/DonationQuest.apk to download the apk file onto your android mobile device.
 
 If you are unable to view the apk file through the link follow these steps:
-1. Go to releases section of the repository (below about me section of the repo)
+1. Go to releases section of the repository (below about section of the repo)
 2. Click the tags and go to "First Release"
 3. 3 files should appear (apk and source code)
 4. Download apk from here
