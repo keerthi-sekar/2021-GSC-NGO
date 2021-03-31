@@ -187,31 +187,31 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:layout_gravity="center"
-                    android:text="1 Points"/>
+                    android:text="10 Points"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:layout_gravity="center"
-                    android:text="2 Points"/>
+                    android:text="20 Points"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:layout_gravity="center"
-                    android:text="3 Points"/>
+                    android:text="30 Points"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:layout_gravity="center"
-                    android:text="4 Points"/>
+                    android:text="40 Points"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:layout_gravity="center"
-                    android:text="5 Points"/>
+                    android:text="50 Points"/>
             </LinearLayout>
         </LinearLayout>
 

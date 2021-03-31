@@ -20,6 +20,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.fragment_rewards.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.sql.Types.NULL
@@ -39,6 +40,7 @@ class MainActivity : AppCompatActivity() {
             .get()
             .addOnSuccessListener { document ->
                 val photourl = document.get("photourl")
+
                 Glide.with(this)
                     .load(photourl)
                     .placeholder(R.drawable.profile_icon)
@@ -76,11 +78,11 @@ class MainActivity : AppCompatActivity() {
         when(SliderCardTitle.text){
             "Popular NGOs" ->{
                 SliderCardTitle.text = "Local Rankings"
-                item1.text = "User 1"
-                item2.text = "User 2"
-                item3.text = "User 3"
-                item4.text = "User 4"
-                item5.text = "User 5"
+                item1.text = "Clifton"
+                item2.text = "Over-the-Rhine"
+                item3.text = "Hyde Park"
+                item4.text = "Corryville"
+                item5.text = "Mount Airy"
             }
             "Local Rankings" -> {
                 SliderCardTitle.text = "Recent Donations"
@@ -112,11 +114,11 @@ class MainActivity : AppCompatActivity() {
             }
             "Recent Donations" ->{
                 SliderCardTitle.text = "Local Rankings"
-                item1.text = "User 1"
-                item2.text = "User 2"
-                item3.text = "User 3"
-                item4.text = "User 4"
-                item5.text = "User 5"
+                item1.text = "Clifton"
+                item2.text = "Over-the-Rhine"
+                item3.text = "Hyde Park"
+                item4.text = "Corryville"
+                item5.text = "Mount Airy"
             }
             "Popular NGOs" ->{
                 SliderCardTitle.text = "Recent Donations"
@@ -140,6 +142,25 @@ class MainActivity : AppCompatActivity() {
     fun getHours(view: View)
     {
         Toast.makeText(applicationContext, "Hours Received!", Toast.LENGTH_SHORT).show()
+        var currentPoints: Int = 0
+        firebaseUser = FirebaseAuth.getInstance().currentUser
+        val points: Int = hours.text.toString().toInt()
+        readData {
+           currentPoints = it.toInt() - points
+            db.collection("users").document(firebaseUser!!.uid)
+                .update("points", currentPoints.toString())
+                .addOnSuccessListener { Log.d("TAG", "DocumentSnapshot successfully updated!") }
+                .addOnFailureListener { e -> Log.w("TAG", "Error updating document", e) }
+        }
+        val intent = Intent(this, VolunteerHoursActivity::class.java)
+        intent.putExtra("points", hours.text.toString())
+        startActivity(intent)
+    }
+
+    fun getCoupon(view: View){
+        val intent = Intent(this, CouponActivity::class.java)
+        intent.putExtra("storeName", cText.text)
+        startActivity(intent)
     }
 
     fun clickRight(view: View){
@@ -177,4 +198,17 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+    fun readData(myCallback: (String) -> Unit) {
+        firebaseUser = FirebaseAuth.getInstance().currentUser
+        db.collection("users").document(firebaseUser!!.uid)
+            .get()
+            .addOnSuccessListener { document ->
+                var points = ""
+                if (document != null) {
+                    points = document.get("points") as String
+                }
+                myCallback(points)
+            }
+    }
+
 }

@@ -224,8 +224,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="“Remember that the happiest people are not those getting more, but those giving more.” \nH. Jackson Brown Jr.
-"
+                android:text="“Be the change you want to see in the world.” \nMahatma Gandhi"
                 android:textAlignment="center"
                 android:textSize="22sp"
                 android:textColor="@android:color/black"

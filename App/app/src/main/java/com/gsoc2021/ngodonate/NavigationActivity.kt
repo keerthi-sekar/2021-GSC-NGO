@@ -64,11 +64,11 @@ class NavigationActivity : AppCompatActivity() {
         firebaseUser = FirebaseAuth.getInstance().currentUser
            readData {
                when(objectType){
-                   "Books" -> currentPoints = it.toInt() + 1
-                   "Clothes" -> currentPoints = it.toInt() + 2
-                   "Shoes" -> currentPoints = it.toInt() + 2
-                   "Hygiene Products" -> currentPoints = it.toInt() + 4
-                   "Electronics" -> currentPoints = it.toInt() + 5
+                   "Books" -> currentPoints = it.toInt() + 10
+                   "Clothes" -> currentPoints = it.toInt() + 20
+                   "Food" -> currentPoints = it.toInt() + 30
+                   "Hygiene Products" -> currentPoints = it.toInt() + 40
+                   "Electronics" -> currentPoints = it.toInt() + 50
                }
                db.collection("users").document(firebaseUser!!.uid)
                    .update("points", currentPoints.toString())
