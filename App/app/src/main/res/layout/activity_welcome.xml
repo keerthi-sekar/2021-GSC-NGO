@@ -13,7 +13,7 @@
         android:layout_width="327dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="152dp"
-        android:text="Welcome to our app! \n \n Please login or signup"
+        android:text="Welcome to DonationQuest! \n \n Please login or signup"
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="30sp"

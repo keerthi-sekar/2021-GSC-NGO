@@ -95,5 +95,7 @@ class NavigationActivity : AppCompatActivity() {
 
     fun backBtn(view: View){
         finish()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 }

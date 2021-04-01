@@ -46,7 +46,7 @@ class ProfileActivity : AppCompatActivity() {
         startActivity(
             Intent(
                 this,
-                WelcomeActivity::class.java
+                SplashScreenActivity::class.java
             ).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         )
     }

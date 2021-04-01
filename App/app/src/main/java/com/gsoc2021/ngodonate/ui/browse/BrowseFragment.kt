@@ -39,13 +39,13 @@ class BrowseFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         searchBtn?.setOnClickListener {
-            searchNGOs(search_ngos?.text.toString())
+            searchNGOs(search_ngos.text.toString())
         }
     }
 
     fun searchNGOs(s: String){
-        NGO.search = s
-        NGO.readData {
+        NGO.tag = s
+        NGO.findNGOs {
             Log.d("browse", "$it")
             val adapter = NGOAdapter(this.requireContext(), it)
             listView.adapter = adapter

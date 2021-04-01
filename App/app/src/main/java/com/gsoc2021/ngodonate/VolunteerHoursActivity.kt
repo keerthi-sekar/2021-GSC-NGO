@@ -1,5 +1,6 @@
 package com.gsoc2021.ngodonate
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -16,5 +17,7 @@ class VolunteerHoursActivity : AppCompatActivity() {
     }
     fun backBtn(view: View){
         finish()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 }

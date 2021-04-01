@@ -45,6 +45,7 @@
                 android:layout_gravity="center"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/icons8_search"
+                android:onClick="search"
                 android:clickable="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="parent"
