@@ -20,12 +20,16 @@ The following was used to either develop the app or integrate functionality:
 *  Android Studio - development
 
 ## Run Prototype
-The following instructions is how to run the most latest build of the app.
+Click here: https://github.com/keerthi-sekar/2021-GSC-NGO/releases/download/v1.0/DonationQuest.apk to download the apk file onto your android mobile device.
 
-*Under Construction*
+If you are unable to view the apk file through the link follow these steps:
+1. Go to releases section of the repository (below about section of the repo)
+2. Click the tags and go to "First Release"
+3. 3 files should appear (apk and source code)
+4. Download apk from here
 
 ## Future
-* Analyze object picture to see quality of donation
+* Integrate object detection to analyze item pictures to see quality of the items donated
 * Integrate ride sharing (Uber or Lyft)
 * Implement monetary donations
 * Smoothen out rewards page with a badge system
